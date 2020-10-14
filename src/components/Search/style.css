@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.search {
+  border: 1px solid #ddd;
+  border-radius: 2rem;
+  width: 400px;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0.1rem;
+}
+
+input {
+  width: 80%;
+  margin: 0;
+  padding: 0 1rem;
+  border: none;
+  height: 100%;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 20%;
+  border: none;
+  height: 100%;
+  padding: 0 1rem;
+  margin: 0;
+  border-radius: 2rem;
+}
+button:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #ddd;
+}
