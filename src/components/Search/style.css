@@ -2,7 +2,7 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .search {
   border: 1px solid #ddd;
@@ -13,18 +13,18 @@ form {
   padding: 0.1rem;
 }
 
-input {
+.search input {
   width: 80%;
   margin: 0;
   padding: 0 1rem;
   border: none;
   height: 100%;
 }
-input:focus {
+.search input:focus {
   outline: none;
 }
 
-button {
+.search button {
   width: 20%;
   border: none;
   height: 100%;
@@ -32,7 +32,7 @@ button {
   margin: 0;
   border-radius: 2rem;
 }
-button:focus {
+.search button:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #ddd;
 }

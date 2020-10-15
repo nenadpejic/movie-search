@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 
-const Search = () => {
+const Search = ({ onSearch }) => {
   const [searchValue, setSearchValue] = useState("");
 
   const handleChange = (event) => {
@@ -10,6 +10,7 @@ const Search = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    onSearch(searchValue);
     setSearchValue("");
   };
 

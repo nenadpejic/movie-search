@@ -1,15 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.css";
+import Movie from "./Movie";
 
-const Movies = () => {
-  const [movies, setMovies] = useState([]);
+const Movies = ({ movies }) => {
+  const handleClick = (param) => {
+    let ul = document.querySelector("#Movies ul");
+    param ? (ul.scrollLeft -= 900) : (ul.scrollLeft += 900);
+  };
 
   return (
-    <ul id="Movies">
-      {movies.map((movie) => (
-        <li>{movie}</li>
-      ))}
-    </ul>
+    <div id="Movies">
+      <ul>
+        {movies.map((movie) => (
+          <Movie key={movie.imdbID} movie={movie} />
+        ))}
+      </ul>
+      <button className="btnLeft" onClick={() => handleClick(true)}>
+        {"<"}
+      </button>
+      <button className="btnRight" onClick={() => handleClick(false)}>
+        {">"}
+      </button>
+    </div>
   );
 };
 

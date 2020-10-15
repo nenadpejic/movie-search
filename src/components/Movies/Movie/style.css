@@ -1,0 +1,17 @@
+#Movies li {
+  color: #000;
+  margin-right: 1rem;
+}
+
+#Movies li img {
+  height: 300px;
+}
+
+#Movies li p {
+  margin: 0rem;
+  font-weight: bold;
+}
+
+#Movies li span {
+  font-weight: normal;
+}
