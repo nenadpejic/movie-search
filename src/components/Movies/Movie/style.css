@@ -1,14 +1,15 @@
 #Movies li {
   color: #000;
   margin-right: 1rem;
+  height: 100%;
 }
 
 #Movies li img {
-  height: 300px;
+  height: 88%;
 }
 
 #Movies li p {
-  margin: 0rem;
+  margin: 0;
   font-weight: bold;
 }
 

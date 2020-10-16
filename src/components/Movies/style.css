@@ -2,12 +2,14 @@
   margin-top: 1rem;
   padding: 0 1rem;
   position: relative;
+  height: calc(100vh - 10.2rem);
 }
 
 #Movies ul {
   display: flex;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 #Movies button {
