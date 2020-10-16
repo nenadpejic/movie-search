@@ -8,17 +8,29 @@ import Movies from "./components/Movies";
 function App() {
   const [movies, setMovies] = useState([]);
 
-  const handleSearch = async (searchValue) => {
+  const handleSearch = (searchValue) => {
     const apiKey = "3c0a7396";
     const API = `https://www.omdbapi.com/?s=${searchValue}&apikey=${apiKey}`;
 
-    try {
-      const res = await axios.get(API);
-      // console.log(res.data);
-      setMovies(res.data.Search);
-    } catch (err) {
-      console.log(err.response.data.Error);
-    }
+    axios
+      .get(API)
+      .then((res) => {
+        if (res.data.Response === "True") {
+          setMovies(res.data.Search);
+        } else {
+          // results
+          console.log(res.data.Error);
+        }
+      })
+      .catch((err) => {
+        // url
+        console.log(err);
+        console.log("Network error!");
+        if (err.response && err.response.status === 401) {
+          // api
+          console.log(err.response.data.Error);
+        }
+      });
   };
 
   return (
