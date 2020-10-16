@@ -4,7 +4,7 @@ import Movie from "./Movie";
 import Loader from "./Loader";
 import Error from "./Error";
 
-const Movies = ({ movies }) => {
+const Movies = ({ movies, isLoading, isError, errMsg }) => {
   const myRef = useRef();
   const [start, setStart] = useState(true);
   const [end, setEnd] = useState(false);
@@ -25,23 +25,29 @@ const Movies = ({ movies }) => {
 
   return (
     <section id="Movies">
-      {/* <Loader /> */}
-      {/* <Error /> */}
-      <ul ref={myRef} onScroll={(e) => handleScroll(e)}>
-        {movies.map((movie) => (
-          <Movie key={movie.imdbID} movie={movie} />
-        ))}
-      </ul>
-      {!start ? (
-        <button className="btnLeft" onClick={() => handleClick(true)}>
-          {"<"}
-        </button>
-      ) : null}
-      {!end ? (
-        <button className="btnRight" onClick={() => handleClick(false)}>
-          {">"}
-        </button>
-      ) : null}
+      {isLoading ? (
+        <Loader />
+      ) : isError ? (
+        <Error errMsg={errMsg} />
+      ) : (
+        <React.Fragment>
+          <ul ref={myRef} onScroll={(e) => handleScroll(e)}>
+            {movies.map((movie) => (
+              <Movie key={movie.imdbID} movie={movie} />
+            ))}
+          </ul>
+          {!start ? (
+            <button className="btnLeft" onClick={() => handleClick(true)}>
+              {"<"}
+            </button>
+          ) : null}
+          {!end ? (
+            <button className="btnRight" onClick={() => handleClick(false)}>
+              {">"}
+            </button>
+          ) : null}
+        </React.Fragment>
+      )}
     </section>
   );
 };

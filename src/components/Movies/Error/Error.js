@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.css";
 
-const Error = ({ errContent }) => {
+const Error = ({ errMsg }) => {
   return (
     <div id="error">
-      <p>{errContent}</p>
+      <p>{errMsg}</p>
     </div>
   );
 };
