@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 import "./style.css";
 import Movie from "./Movie";
-import Loader from "../Loader";
+import Loader from "./Loader";
+import Error from "./Error";
 
 const Movies = ({ movies }) => {
   const myRef = useRef();
@@ -25,6 +26,7 @@ const Movies = ({ movies }) => {
   return (
     <section id="Movies">
       {/* <Loader /> */}
+      {/* <Error /> */}
       <ul ref={myRef} onScroll={(e) => handleScroll(e)}>
         {movies.map((movie) => (
           <Movie key={movie.imdbID} movie={movie} />
