@@ -4,7 +4,8 @@ import Movie from "./Movie";
 import Loader from "./Loader";
 import Error from "./Error";
 
-const Movies = ({ movies, isLoading, isError, errMsg }) => {
+const Movies = ({ state }) => {
+  const { movies, isLoading, isError, errMsg } = state;
   const myRef = useRef();
   const [start, setStart] = useState(true);
   const [end, setEnd] = useState(false);
