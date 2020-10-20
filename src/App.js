@@ -1,56 +1,19 @@
-import React, { useReducer } from "react";
-import axios from "axios";
+import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Search from "./components/Search";
-import Movies from "./components/Movies";
-import { reducer, initialState } from "./reducer";
+import { Home, About } from "./pages";
 
-function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  const handleSearch = (searchValue) => {
-    const apiKey = "3c0a7396";
-    const API = `https://www.omdbapi.com/?s=${searchValue}&apikey=${apiKey}`;
-
-    dispatch({ type: "SEARCH_LOADING" });
-
-    axios
-      .get(API)
-      .then((res) => {
-        if (res.data.Response === "True") {
-          dispatch({
-            type: "SEARCH_SUCCESS",
-            payload: { movies: res.data.Search },
-          });
-        } else {
-          // results
-          console.log(res.data.Error);
-          dispatch({ type: "SEARCH_ERR", payload: { errMsg: res.data.Error } });
-        }
-      })
-      .catch((err) => {
-        // url
-        console.log(err);
-        dispatch({ type: "SEARCH_ERR", payload: { errMsg: "Network error!" } });
-        if (err.response && err.response.status === 401) {
-          // api
-          console.log(err.response.data.Error);
-          dispatch({
-            type: "SEARCH_ERR",
-            payload: { errMsg: err.response.data.Error },
-          });
-        }
-      });
-  };
-
+const App = () => {
   return (
     <div className="App">
-      <Header />
-      <Search onSearch={handleSearch} />
-      <Movies state={state} />
+      <Router>
+        <Header />
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
