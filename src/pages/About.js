@@ -10,9 +10,9 @@ const About = () => {
         and it will return a list of movies with that title, if there are any.
       </p>
       <p>
-        This app is created as my first React project, showcasing Reacts
-        component based architecture, unidirectional data flow and much more..
-        Movie database api is from OMDb API.
+        This app is created as I wanted to explore Reacts functionality,
+        showcasing Reacts component based architecture, unidirectional data flow
+        and much more.. Movie database api is from OMDb API.
       </p>
       <h3>Technologies used:</h3>
       <ul className="exclude">
