@@ -12,8 +12,8 @@ const Movies = ({ state }) => {
 
   const handleClick = (param) => {
     param
-      ? (myRef.current.scrollLeft -= 900)
-      : (myRef.current.scrollLeft += 900);
+      ? (myRef.current.scrollLeft -= myRef.current.clientWidth)
+      : (myRef.current.scrollLeft += myRef.current.clientWidth);
   };
 
   const handleScroll = (e) => {
