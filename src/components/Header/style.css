@@ -39,3 +39,9 @@ header nav ul a li {
 header nav ul a:hover li {
   border-bottom: 3px solid #ddd;
 }
+
+@media screen and (max-width: 600px) {
+  header h1 {
+    display: none;
+  }
+}
