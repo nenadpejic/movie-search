@@ -3,6 +3,7 @@ import "./style.css";
 import Movie from "./Movie";
 import Loader from "./Loader";
 import Error from "./Error";
+import Arrow from "./Arrow";
 
 const Movies = ({ state }) => {
   const { movies, isLoading, isError, errMsg } = state;
@@ -30,25 +31,27 @@ const Movies = ({ state }) => {
         <Loader />
       ) : isError ? (
         <Error errMsg={errMsg} />
-      ) : (
+      ) : movies[0] ? (
         <React.Fragment>
           <ul ref={myRef} onScroll={(e) => handleScroll(e)}>
             {movies.map((movie) => (
               <Movie key={movie.imdbID} movie={movie} />
             ))}
           </ul>
-          {!start ? (
-            <button className="btnLeft" onClick={() => handleClick(true)}>
-              {"<"}
-            </button>
-          ) : null}
           {!end ? (
-            <button className="btnRight" onClick={() => handleClick(false)}>
-              {">"}
-            </button>
+            <Arrow
+              className="arrow-right"
+              handleClick={() => handleClick(false)}
+            />
+          ) : null}
+          {!start ? (
+            <Arrow
+              className="arrow-left"
+              handleClick={() => handleClick(true)}
+            />
           ) : null}
         </React.Fragment>
-      )}
+      ) : null}
     </section>
   );
 };
