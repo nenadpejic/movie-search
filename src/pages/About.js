@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 const About = () => {
   return (
@@ -14,14 +15,14 @@ const About = () => {
         Movie database api is from OMDb API.
       </p>
       <h3>Technologies used:</h3>
-      <ul>
+      <ul className="exclude">
         <li>
           React
-          <ul>
+          <ul className="exclude">
             <li>Stateless Functional Components</li>
             <li>
               Hooks
-              <ul>
+              <ul className="exclude">
                 <li>useState</li>
                 <li>useRef</li>
                 <li>useReducer</li>

@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import "./style.css";
 import axios from "axios";
 import Search from "../components/Search";
 import Movies from "../components/Movies";
