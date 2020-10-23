@@ -16,7 +16,7 @@
   outline: none;
 }
 
-[class|="arrow"] img {
+[class|="arrow"] svg {
   width: 2rem;
 }
 

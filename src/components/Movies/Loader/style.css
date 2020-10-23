@@ -1,6 +1,3 @@
-#loader {
+.loader {
   height: 88%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

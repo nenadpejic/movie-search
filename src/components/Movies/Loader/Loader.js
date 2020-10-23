@@ -1,13 +1,9 @@
 import React from "react";
 import "./style.css";
-import loaderSvg from "../../../images/loader.svg";
+import { ReactComponent as LoaderSvg } from "../../../images/loader.svg";
 
 const Loader = () => {
-  return (
-    <div id="loader">
-      <img src={loaderSvg} alt="loader" />
-    </div>
-  );
+  return <LoaderSvg className="loader" fill="#000" />;
 };
 
 export default Loader;

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <Logo className="logo" />
+      <Logo className="logo" fill="#fff" />
       <h1>Movie Search</h1>
       <nav>
         <ul>
