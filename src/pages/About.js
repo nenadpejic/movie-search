@@ -20,6 +20,7 @@ const About = () => {
           React
           <ul className="exclude">
             <li>Stateless Functional Components</li>
+            <li>ReactComponent</li>
             <li>
               Hooks
               <ul className="exclude">
