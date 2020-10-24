@@ -27,6 +27,7 @@ const About = () => {
                 <li>useState</li>
                 <li>useRef</li>
                 <li>useReducer</li>
+                <li>useEffect</li>
               </ul>
             </li>
           </ul>

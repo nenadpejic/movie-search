@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import "./style.css";
 import axios from "axios";
 import Search from "../components/Search";
@@ -7,6 +7,15 @@ import { reducer, initialState } from "../reducer";
 
 function Home() {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    if (localStorage.getItem("movies")) {
+      dispatch({
+        type: "SEARCH_SUCCESS",
+        payload: { movies: JSON.parse(localStorage.getItem("movies")) },
+      });
+    }
+  }, []);
 
   const handleSearch = (searchValue) => {
     const apiKey = "3c0a7396";
@@ -22,6 +31,7 @@ function Home() {
             type: "SEARCH_SUCCESS",
             payload: { movies: res.data.Search },
           });
+          localStorage.setItem("movies", JSON.stringify(res.data.Search));
         } else {
           // results
           console.log(res.data.Error);
