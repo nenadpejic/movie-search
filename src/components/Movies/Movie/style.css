@@ -1,5 +1,5 @@
 #Movies li {
-  color: #000;
+  color: #333;
   margin-right: 1rem;
   height: 100%;
 }
@@ -15,4 +15,21 @@
 
 #Movies li span {
   font-weight: normal;
+}
+
+.pna {
+  height: 88%;
+  position: relative;
+  border: 1px solid #ddd;
+}
+.pna-img {
+  height: 100% !important;
+  visibility: hidden;
+}
+.pna-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  font-size: 2rem;
 }
