@@ -35,7 +35,7 @@ const Movies = ({ state }) => {
         <React.Fragment>
           <ul ref={myRef} onScroll={(e) => handleScroll(e)}>
             {movies.map((movie) => (
-              <Movie key={movie.imdbID} movie={movie} />
+              <Movie key={movie.imdbID} movie={movie} setStart={setStart} />
             ))}
           </ul>
           {!end ? (

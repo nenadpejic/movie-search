@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.css";
 import imgSrc from "../../../images/placeholder.jpg";
 
-const Movie = ({ movie }) => {
+const Movie = ({ movie, setStart }) => {
+  useEffect(() => {
+    setStart(true);
+  }, []);
+
   return (
     <li>
       {movie.Poster === "N/A" ? (
