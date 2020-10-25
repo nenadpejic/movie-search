@@ -13,6 +13,7 @@ const Movies = ({ state }) => {
 
   useEffect(() => {
     setStart(true);
+    setEnd(false);
   }, [isLoading]);
 
   const handleClick = (param) => {
