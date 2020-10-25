@@ -14,4 +14,12 @@ footer {
 
 footer p {
   margin: 0;
+  font-weight: 400;
+}
+
+.developer {
+  color: #333;
+}
+.developer:hover {
+  color: #ff9d0a;
 }
