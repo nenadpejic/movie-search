@@ -5,7 +5,11 @@ import imgSrc from "../../../images/placeholder.jpg";
 const Movie = ({ movie }) => {
   return (
     <li>
-      <a href={"https://www.imdb.com/title/" + movie.imdbID} target="_blank">
+      <a
+        href={"https://www.imdb.com/title/" + movie.imdbID}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {movie.Poster === "N/A" ? (
           <div className="pna">
             <img className="pna-img" src={imgSrc} alt="placeholder" />
