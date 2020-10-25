@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./style.css";
 import Movie from "./Movie";
 import Loader from "./Loader";
@@ -10,6 +10,10 @@ const Movies = ({ state }) => {
   const myRef = useRef();
   const [start, setStart] = useState(true);
   const [end, setEnd] = useState(false);
+
+  useEffect(() => {
+    setStart(true);
+  }, [isLoading]);
 
   const handleClick = (param) => {
     param
@@ -35,7 +39,7 @@ const Movies = ({ state }) => {
         <React.Fragment>
           <ul ref={myRef} onScroll={(e) => handleScroll(e)}>
             {movies.map((movie) => (
-              <Movie key={movie.imdbID} movie={movie} setStart={setStart} />
+              <Movie key={movie.imdbID} movie={movie} />
             ))}
           </ul>
           {!end ? (
