@@ -12,7 +12,8 @@ const About = () => {
       <p>
         This app is created as I wanted to explore Reacts functionality,
         showcasing Reacts component based architecture, unidirectional data flow
-        and much more.. Movie database api is from OMDb API.
+        and much more. Data is stored localy and stays on page refresh. Movie
+        database api is from OMDb API.
       </p>
       <h3>Technologies used:</h3>
       <ul className="exclude">
