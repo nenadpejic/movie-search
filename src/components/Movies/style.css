@@ -5,13 +5,33 @@
   height: calc(100vh - 10.2rem);
 }
 
-#Movies ul {
-  display: flex;
+#Movies .window {
   overflow-x: scroll;
   scroll-behavior: smooth;
   height: 100%;
+  text-align: left;
+}
+#Movies ul {
+  display: inline-flex;
+  height: 100%;
 }
 
-#Movies ul::-webkit-scrollbar {
+#Movies .window::-webkit-scrollbar {
   display: none;
+}
+
+@media (max-width: 600px) {
+  .movie-details {
+    flex-direction: column;
+  }
+  #Movies {
+    height: auto;
+  }
+  .arrow-left,
+  .arrow-right {
+    display: none;
+  }
+  #Movies > ul {
+    height: calc(100vh - 10.2rem);
+  }
 }

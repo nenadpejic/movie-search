@@ -1,27 +1,36 @@
 import React from "react";
 import "./style.css";
 import imgSrc from "../../../images/placeholder.jpg";
+import axios from "axios";
 
-const Movie = ({ movie }) => {
+const Movie = ({ movie, dispatch }) => {
+  const handleClick = (movieImdbID) => {
+    const API = `http://www.omdbapi.com/?i=${movieImdbID}&plot=full&apiKey=3c0a7396`;
+    axios
+      .get(API)
+      .then((res) => {
+        // console.log(res.data);
+        dispatch({
+          type: "MOVIE_DETAILS",
+          payload: { movieData: res.data },
+        });
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
-    <li>
-      <a
-        href={"https://www.imdb.com/title/" + movie.imdbID}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {movie.Poster === "N/A" ? (
-          <div className="pna">
-            <img className="pna-img" src={imgSrc} alt="placeholder" />
-            <div className="pna-content">Poster Not Available</div>
-          </div>
-        ) : (
-          <img src={movie.Poster} alt="poster" />
-        )}
-        <p>
-          {movie.Title} <span>({movie.Year})</span>
-        </p>
-      </a>
+    <li onClick={() => handleClick(movie.imdbID)}>
+      {movie.Poster === "N/A" ? (
+        <div className="pna">
+          <img className="pna-img" src={imgSrc} alt="placeholder" />
+          <span className="pna-content">Poster Not Available</span>
+        </div>
+      ) : (
+        <img src={movie.Poster} alt="poster" />
+      )}
+      <p>
+        {movie.Title} <span>({movie.Year})</span>
+      </p>
     </li>
   );
 };

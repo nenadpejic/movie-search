@@ -4,15 +4,26 @@ import Movie from "./Movie";
 import Loader from "./Loader";
 import Error from "./Error";
 import Arrow from "./Arrow";
+import AdvancedSearch from "./AdvancedSearch";
+import MovieDetails from "./MovieDetails";
 
-const Movies = ({ state }) => {
-  const { movies, isLoading, isError, errMsg } = state;
-  const myRef = useRef();
+const Movies = ({ state, dispatch, handleSearch }) => {
+  const {
+    movies,
+    isLoading,
+    isError,
+    errMsg,
+    advancedSearch,
+    movieDetails,
+    movieData,
+  } = state;
+  const windowRef = useRef();
+  const ulRef = useRef();
   const [start, setStart] = useState(true);
   const [end, setEnd] = useState(false);
 
   useEffect(() => {
-    if (isLoading) {
+    if (!isLoading) {
       setStart(true);
       setEnd(false);
     }
@@ -20,8 +31,8 @@ const Movies = ({ state }) => {
 
   const handleClick = (param) => {
     param
-      ? (myRef.current.scrollLeft -= myRef.current.clientWidth)
-      : (myRef.current.scrollLeft += myRef.current.clientWidth);
+      ? (windowRef.current.scrollLeft -= windowRef.current.clientWidth)
+      : (windowRef.current.scrollLeft += windowRef.current.clientWidth);
   };
 
   const handleScroll = (e) => {
@@ -34,17 +45,25 @@ const Movies = ({ state }) => {
 
   return (
     <section id="Movies">
+      {movieDetails ? <MovieDetails data={movieData} /> : null}
+      {advancedSearch ? <AdvancedSearch handleSearch={handleSearch} /> : null}
       {isLoading ? (
         <Loader />
       ) : isError ? (
         <Error errMsg={errMsg} />
-      ) : movies[0] ? (
+      ) : movies ? (
         <React.Fragment>
-          <ul ref={myRef} onScroll={(e) => handleScroll(e)}>
-            {movies.map((movie) => (
-              <Movie key={movie.imdbID} movie={movie} />
-            ))}
-          </ul>
+          <div
+            className="window"
+            ref={windowRef}
+            onScroll={(e) => handleScroll(e)}
+          >
+            <ul ref={ulRef}>
+              {movies.map((movie) => (
+                <Movie key={movie.imdbID} movie={movie} dispatch={dispatch} />
+              ))}
+            </ul>
+          </div>
           {!end ? (
             <Arrow
               className="arrow-right"

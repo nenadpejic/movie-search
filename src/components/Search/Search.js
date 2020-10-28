@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 
-const Search = ({ onSearch }) => {
+const Search = ({ dispatch, handleSearch }) => {
   const [searchValue, setSearchValue] = useState("");
 
   const handleChange = (event) => {
@@ -10,13 +10,23 @@ const Search = ({ onSearch }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSearch(searchValue);
+    handleSearch(searchValue);
     setSearchValue("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="search">
+        <ul className="dropdown">
+          <li>
+            All
+            <ul className="submenu">
+              <li onClick={() => dispatch({ type: "ADVANCED_SEARCH" })}>
+                Advanced Search
+              </li>
+            </ul>
+          </li>
+        </ul>
         <input
           type="text"
           placeholder="Movie title"

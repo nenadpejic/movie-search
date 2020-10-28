@@ -1,0 +1,48 @@
+.advanced-search {
+  text-align: left;
+}
+
+.advanced-search input,
+.advanced-search select {
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #777;
+  border-radius: 0.2rem;
+}
+.advanced-search button {
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.2rem;
+  background-color: #eee;
+}
+
+.advanced-search label {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.advanced-search button:focus,
+.advanced-search input:focus {
+  outline: none;
+}
+.advanced-search button:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+
+.input-err {
+  position: absolute;
+  display: block;
+  color: #ff0000;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+.advanced-search label > div {
+  display: inline-block;
+}
+
+.advanced-search form {
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}

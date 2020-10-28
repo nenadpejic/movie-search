@@ -1,0 +1,46 @@
+.movie-details {
+  display: flex;
+  text-align: left;
+  height: 100%;
+}
+.movie-details .container {
+  padding-left: 1rem;
+}
+.movie-details .container:first-child {
+  background-color: #333;
+  color: #fff;
+}
+.movie-details .header {
+  overflow: hidden;
+  padding: 1rem 0;
+}
+.movie-details .header h2 {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+.movie-details .year {
+  font-size: 1.7rem;
+}
+.movie-details .year,
+.movie-details .header > span {
+  color: #aaa;
+}
+
+.movie-details .plot p {
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+.movie-details .metascore,
+.movie-details .imdb-rating {
+  font-weight: 500;
+}
+.movie-details .metascore a,
+.movie-details .imdb-rating a {
+  color: royalblue !important;
+  font-weight: 400;
+}
+.movie-details .imdb-rating {
+  margin-left: 1rem;
+}

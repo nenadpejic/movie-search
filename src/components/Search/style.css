@@ -10,11 +10,46 @@ form {
   width: 400px;
   overflow: hidden;
   height: 3rem;
-  padding: 0.1rem;
+}
+
+.search .dropdown {
+  padding-bottom: 3px;
+  float: left;
+  width: 10%;
+  height: 100%;
+  border-right: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search .dropdown:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.search .dropdown:hover .submenu {
+  display: block;
+}
+.search .submenu {
+  display: none;
+  text-align: left;
+  background-color: #000;
+  color: #fff;
+  z-index: 1;
+  position: absolute;
+  transform: translate(-10px, 14px);
+  padding: 0.5rem 0;
+}
+.search .submenu li {
+  padding: 1rem;
+}
+.search .submenu li:hover {
+  background-color: #222;
 }
 
 .search input {
-  width: 80%;
+  width: 70%;
   margin: 0;
   padding: 0 1rem;
   border: none;
@@ -27,7 +62,7 @@ form {
 .search button {
   width: 20%;
   border: none;
-  height: 100%;
+  height: 96%;
   padding: 0 1rem;
   margin: 0;
   border-radius: 2rem;
@@ -35,4 +70,7 @@ form {
 .search button:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #ddd;
+}
+.search button:hover {
+  background-color: #ddd;
 }

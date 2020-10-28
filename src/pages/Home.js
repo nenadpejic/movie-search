@@ -17,9 +17,19 @@ function Home() {
     }
   }, []);
 
-  const handleSearch = (searchValue) => {
+  const handleSearch = (searchTitle, searchYear = "", searchType = "") => {
     const apiKey = "3c0a7396";
-    const API = `https://www.omdbapi.com/?s=${searchValue}&apikey=${apiKey}`;
+    let API = "";
+
+    if (!searchYear && !searchType) {
+      API = `https://www.omdbapi.com/?s=${searchTitle}&apikey=${apiKey}`;
+    } else if (searchYear && !searchType) {
+      API = `https://www.omdbapi.com/?s=${searchTitle}&y=${searchYear}&apikey=${apiKey}`;
+    } else if (!searchYear && searchType) {
+      API = `https://www.omdbapi.com/?s=${searchTitle}&type=${searchType}&apikey=${apiKey}`;
+    } else if (searchYear && searchType) {
+      API = `https://www.omdbapi.com/?s=${searchTitle}&y=${searchYear}&type=${searchType}&apikey=${apiKey}`;
+    }
 
     dispatch({ type: "SEARCH_LOADING" });
 
@@ -61,8 +71,8 @@ function Home() {
 
   return (
     <div className="Home">
-      <Search onSearch={handleSearch} />
-      <Movies state={state} />
+      <Search dispatch={dispatch} handleSearch={handleSearch} />
+      <Movies state={state} dispatch={dispatch} handleSearch={handleSearch} />
     </div>
   );
 }
