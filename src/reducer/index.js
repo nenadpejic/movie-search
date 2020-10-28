@@ -1,7 +1,6 @@
 export const initialState = {
   movies: [],
   isLoading: false,
-  isError: false,
   errMsg: "",
   advancedSearch: false,
   movieDetails: false,
@@ -14,21 +13,18 @@ export function reducer(state, action) {
       return {
         movies: [],
         isLoading: true,
-        isError: false,
         errMsg: "",
       };
     case "SEARCH_SUCCESS":
       return {
         movies: action.payload.movies,
         isLoading: false,
-        isError: false,
         errMsg: "",
       };
     case "SEARCH_ERR":
       return {
         movies: [],
         isLoading: false,
-        isError: true,
         errMsg: action.payload.errMsg,
       };
     case "ADVANCED_SEARCH":

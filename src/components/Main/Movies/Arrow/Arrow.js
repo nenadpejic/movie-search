@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as ArrowSvg } from "../../../images/left-arrow.svg";
+import { ReactComponent as ArrowSvg } from "../../../../images/left-arrow.svg";
 import "./style.css";
 
 const Arrow = ({ className, handleClick }) => {

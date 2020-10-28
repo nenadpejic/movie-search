@@ -3,8 +3,14 @@
   text-align: left;
   height: 100%;
 }
+
+.movie-details img {
+  width: fit-content;
+  height: fit-content;
+}
+
 .movie-details .container {
-  padding-left: 1rem;
+  padding: 0 1rem;
 }
 .movie-details .container:first-child {
   background-color: #333;

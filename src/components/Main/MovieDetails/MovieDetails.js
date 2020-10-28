@@ -1,17 +1,29 @@
 import React from "react";
 import "./style.css";
+import imgSrc from "../../../images/placeholder.jpg";
 
 const MovieDetails = ({ data }) => {
   const handleRuntime = (data) => {
-    let min = parseInt(data.Runtime);
-    let hour = Math.floor(min / 60);
-    min = min % 60;
-    return [hour, min];
+    if (data.Runtime === "N/A") {
+      return ["N/A", "N/A"];
+    } else {
+      let min = parseInt(data.Runtime);
+      let hour = Math.floor(min / 60);
+      min = min % 60;
+      return [hour, min];
+    }
   };
 
   return (
     <div className="movie-details">
-      <img src={data.Poster} alt="poster" />
+      {data.Poster === "N/A" ? (
+        <div className="pna">
+          <img className="pna-img" src={imgSrc} alt="placeholder" />
+          <span className="pna-content">Poster Not Available</span>
+        </div>
+      ) : (
+        <img src={data.Poster} alt="poster" />
+      )}
       <div className="info">
         <div className="container">
           <div className="header">

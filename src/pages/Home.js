@@ -2,7 +2,7 @@ import React, { useEffect, useReducer } from "react";
 import "./style.css";
 import axios from "axios";
 import Search from "../components/Search";
-import Movies from "../components/Movies";
+import Main from "../components/Main";
 import { reducer, initialState } from "../reducer";
 
 function Home() {
@@ -19,17 +19,17 @@ function Home() {
 
   const handleSearch = (searchTitle, searchYear = "", searchType = "") => {
     const apiKey = "3c0a7396";
-    let API = "";
-
+    let API = "https://www.omdbapi.com/?s=";
     if (!searchYear && !searchType) {
-      API = `https://www.omdbapi.com/?s=${searchTitle}&apikey=${apiKey}`;
+      API += `${searchTitle}`;
     } else if (searchYear && !searchType) {
-      API = `https://www.omdbapi.com/?s=${searchTitle}&y=${searchYear}&apikey=${apiKey}`;
+      API += `${searchTitle}&y=${searchYear}`;
     } else if (!searchYear && searchType) {
-      API = `https://www.omdbapi.com/?s=${searchTitle}&type=${searchType}&apikey=${apiKey}`;
+      API += `${searchTitle}&type=${searchType}`;
     } else if (searchYear && searchType) {
-      API = `https://www.omdbapi.com/?s=${searchTitle}&y=${searchYear}&type=${searchType}&apikey=${apiKey}`;
+      API += `${searchTitle}&y=${searchYear}&type=${searchType}`;
     }
+    API += `&apikey=${apiKey}`;
 
     dispatch({ type: "SEARCH_LOADING" });
 
@@ -72,7 +72,7 @@ function Home() {
   return (
     <div className="Home">
       <Search dispatch={dispatch} handleSearch={handleSearch} />
-      <Movies state={state} dispatch={dispatch} handleSearch={handleSearch} />
+      <Main state={state} dispatch={dispatch} handleSearch={handleSearch} />
     </div>
   );
 }

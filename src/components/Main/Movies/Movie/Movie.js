@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import imgSrc from "../../../images/placeholder.jpg";
+import imgSrc from "../../../../images/placeholder.jpg";
 import axios from "axios";
 
 const Movie = ({ movie, dispatch }) => {
@@ -9,7 +9,6 @@ const Movie = ({ movie, dispatch }) => {
     axios
       .get(API)
       .then((res) => {
-        // console.log(res.data);
         dispatch({
           type: "MOVIE_DETAILS",
           payload: { movieData: res.data },
