@@ -11,15 +11,15 @@ const Main = ({ state, dispatch, handleSearch }) => {
     movies,
     isLoading,
     errMsg,
-    advancedSearch,
-    movieDetails,
+    isAdvancedSearch,
+    isMovieDetails,
     movieData,
   } = state;
 
   return (
     <main id="Main">
-      {movieDetails ? <MovieDetails data={movieData} /> : null}
-      {advancedSearch ? <AdvancedSearch handleSearch={handleSearch} /> : null}
+      {isMovieDetails ? <MovieDetails data={movieData} /> : null}
+      {isAdvancedSearch ? <AdvancedSearch handleSearch={handleSearch} /> : null}
       {isLoading ? (
         <Loader />
       ) : errMsg ? (

@@ -2,8 +2,8 @@ export const initialState = {
   movies: [],
   isLoading: false,
   errMsg: "",
-  advancedSearch: false,
-  movieDetails: false,
+  isAdvancedSearch: false,
+  isMovieDetails: false,
   movieData: null,
 };
 
@@ -29,11 +29,11 @@ export function reducer(state, action) {
       };
     case "ADVANCED_SEARCH":
       return {
-        advancedSearch: !state.advancedSearch,
+        isAdvancedSearch: !state.isAdvancedSearch,
       };
     case "MOVIE_DETAILS":
       return {
-        movieDetails: !state.movieDetails,
+        isMovieDetails: !state.isMovieDetails,
         movieData: action.payload.movieData,
       };
     default:
