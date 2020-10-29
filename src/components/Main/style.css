@@ -7,14 +7,8 @@
     flex-direction: column;
     align-items: center;
   }
-  #Movies {
-    height: auto;
-  }
   .arrow-left,
   .arrow-right {
     display: none;
-  }
-  #Movies {
-    height: calc(100vh - 10.2rem);
   }
 }

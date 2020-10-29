@@ -1,13 +1,11 @@
 #Movies {
   padding: 0 1rem;
   position: relative;
-  height: calc(100vh - 10.2rem);
 }
 
 #Movies .window {
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-behavior: smooth;
-  height: 100%;
   text-align: left;
 }
 
@@ -17,5 +15,4 @@
 
 #Movies .window ul {
   display: inline-flex;
-  height: 100%;
 }

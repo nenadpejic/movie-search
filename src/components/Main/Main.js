@@ -18,13 +18,14 @@ const Main = ({ state, dispatch, handleSearch }) => {
 
   return (
     <main id="Main">
+      {/* <Loader /> */}
       {isMovieDetails ? <MovieDetails data={movieData} /> : null}
       {isAdvancedSearch ? <AdvancedSearch handleSearch={handleSearch} /> : null}
       {isLoading ? (
         <Loader />
       ) : errMsg ? (
         <Error errMsg={errMsg} />
-      ) : movies ? (
+      ) : movies?.length ? (
         <Movies movies={movies} dispatch={dispatch} />
       ) : null}
     </main>

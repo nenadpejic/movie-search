@@ -7,11 +7,15 @@ const Movies = ({ movies, dispatch }) => {
   const windowRef = useRef(null);
   const ulRef = useRef(null);
   const [start, setStart] = useState(true);
-  const [end, setEnd] = useState(false);
+  const [end, setEnd] = useState(true);
 
   useEffect(() => {
     setStart(true);
-    setEnd(false);
+    if (ulRef.current.clientWidth >= windowRef.current.clientWidth) {
+      setEnd(false);
+    } else {
+      setEnd(true);
+    }
   }, []);
 
   const handleClick = (param) => {
