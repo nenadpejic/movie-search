@@ -2,10 +2,11 @@ import React from "react";
 import "./style.css";
 import imgSrc from "../../../../images/placeholder.jpg";
 import axios from "axios";
+import { apiUrl, apiKey } from "../../../../config/API";
 
 const Movie = ({ movie, dispatch }) => {
   const handleClick = (movieImdbID) => {
-    const API = `http://www.omdbapi.com/?i=${movieImdbID}&plot=full&apiKey=3c0a7396`;
+    const API = apiUrl + `?i=${movieImdbID}&plot=full&apiKey=` + apiKey;
     axios
       .get(API)
       .then((res) => {

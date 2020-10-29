@@ -4,6 +4,7 @@ import axios from "axios";
 import Search from "../components/Search";
 import Main from "../components/Main";
 import { reducer, initialState } from "../reducer";
+import { apiUrl, apiKey } from "../config/API";
 
 function Home() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -18,16 +19,15 @@ function Home() {
   }, []);
 
   const handleSearch = (searchTitle, searchYear = "", searchType = "") => {
-    const apiKey = "3c0a7396";
-    let API = "https://www.omdbapi.com/?s=";
+    let API = apiUrl;
     if (!searchYear && !searchType) {
-      API += `${searchTitle}`;
+      API += `?s=${searchTitle}`;
     } else if (searchYear && !searchType) {
-      API += `${searchTitle}&y=${searchYear}`;
+      API += `?s=${searchTitle}&y=${searchYear}`;
     } else if (!searchYear && searchType) {
-      API += `${searchTitle}&type=${searchType}`;
+      API += `?s=${searchTitle}&type=${searchType}`;
     } else if (searchYear && searchType) {
-      API += `${searchTitle}&y=${searchYear}&type=${searchType}`;
+      API += `?s=${searchTitle}&y=${searchYear}&type=${searchType}`;
     }
     API += `&apikey=${apiKey}`;
 
