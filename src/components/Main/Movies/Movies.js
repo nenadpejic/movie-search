@@ -14,27 +14,6 @@ const Movies = ({ movies, dispatch }) => {
     setEnd(false);
   }, []);
 
-  useEffect(() => {
-    console.log(
-      windowRef.current,
-      windowRef.current.clientWidth,
-      windowRef.current.offsetWidth,
-      windowRef.current.scrollWidth
-    );
-  }, [windowRef]);
-
-  useEffect(() => {
-    if (ulRef.current) {
-      console.log();
-      console.log(
-        ulRef.current, // null!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        ulRef.current.clientWidth, // null!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        ulRef.current.offsetWidth, // null!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        ulRef.current.scrollWidth
-      );
-    }
-  }, [movies]);
-
   const handleClick = (param) => {
     if (param === "left") {
       windowRef.current.scrollLeft -= windowRef.current.clientWidth;
