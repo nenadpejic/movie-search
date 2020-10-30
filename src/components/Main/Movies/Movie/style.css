@@ -1,6 +1,7 @@
 #Movies li {
   color: #333;
   margin-right: 1rem;
+  text-align: center;
 }
 
 #Movies li img {
