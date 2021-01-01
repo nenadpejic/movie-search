@@ -1,6 +1,5 @@
 footer {
   background-color: #eee;
-  color: #222;
   border-top: 1px solid #ddd;
   overflow: hidden;
   position: absolute;
@@ -10,16 +9,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-footer p {
-  margin: 0;
-  font-weight: 400;
-}
-
-.developer {
-  color: #333;
-}
-.developer:hover {
-  color: #ff9d0a;
+  color: #555;
+  font-size: 0.9rem;
 }

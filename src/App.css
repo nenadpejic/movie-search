@@ -15,3 +15,7 @@ ul:not(.exclude) {
   overflow: hidden;
   padding-bottom: 3rem;
 }
+
+a {
+  color: inherit;
+}

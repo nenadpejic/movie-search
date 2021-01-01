@@ -1,9 +1,8 @@
-import React from "react";
 import "./App.css";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Header from "./components/Header";
+import { Header, Footer } from "./components";
 import { Home, About } from "./pages";
-import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -12,8 +11,8 @@ const App = () => {
         <Header />
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 };

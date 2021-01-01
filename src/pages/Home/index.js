@@ -1,10 +1,9 @@
-import React, { useEffect, useReducer } from "react";
 import "./style.css";
+import React, { useEffect, useReducer } from "react";
 import axios from "axios";
-import Search from "../components/Search";
-import Main from "../components/Main";
-import { reducer, initialState } from "../reducer";
-import { apiUrl, apiKey } from "../config/API";
+import { Search, Main } from "../../components";
+import { reducer, initialState } from "../../reducer";
+import { apiUrl, apiKey } from "../../config/API";
 
 function Home() {
   const [state, dispatch] = useReducer(reducer, initialState);
