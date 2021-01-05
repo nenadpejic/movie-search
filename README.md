@@ -1,4 +1,4 @@
-# movie-search
+# Movie Search
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bd586e38-17bf-47f0-91e7-8db23770852f/deploy-status)](https://app.netlify.com/sites/nenadpejic-movie-search/deploys)
 
@@ -8,7 +8,7 @@ Live version is [here](https://nenadpejic-movie-search.netlify.app/)
 
 Code is [here](https://github.com/nenadpejic/movie-search)
 
-[![thumbnail](https://user-images.githubusercontent.com/50808282/103437097-60691d80-4c23-11eb-8cdd-49fdb8e291d2.png)](https://nenadpejic-movie-search.netlify.app/)
+[![thumbnail1](https://user-images.githubusercontent.com/50808282/103686271-d99fa200-4f8e-11eb-8141-0f402fe86b84.png)](https://nenadpejic-movie-search.netlify.app/)
 
 ## Table of Contents
 
